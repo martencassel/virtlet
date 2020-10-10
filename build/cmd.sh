@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x #debug
 set -o errexit
 set -o nounset
 set -o pipefail
@@ -46,12 +47,18 @@ fi
 if [[ ${VIRTLET_MULTI_NODE} ]]; then
   virtlet_nodes+=(kube-node-2)
 fi
+
 bindata_modtime=1522279343
+#bindata_modtime=1602316544
 bindata_out="pkg/tools/bindata.go"
 bindata_dir="deploy/data"
 bindata_pkg="tools"
 ldflags=()
 go_package=github.com/Mirantis/virtlet
+
+# go mod init
+export GO111MODULE=on
+
 
 function image_tags_filter {
     local tag="${1}"
@@ -103,6 +110,7 @@ function update_dockerfile_from {
 }
 
 function ensure_build_image {
+    echo "ensure_build_image"
     update_dockerfile_from "${project_dir}/images/Dockerfile.build-base" "${project_dir}/images/Dockerfile.virtlet-base" virtlet_base_image
     update_dockerfile_from "${project_dir}/images/Dockerfile.build" "${project_dir}/images/Dockerfile.build-base" build_base_image
     update_dockerfile_from "${project_dir}/images/Dockerfile.virtlet" "${project_dir}/images/Dockerfile.virtlet-base"
@@ -148,6 +156,8 @@ function get_rsync_addr {
 }
 
 function ensure_build_container {
+    echo "ensure_build_container"
+    echo "${project_dir}"
     if ! docker ps --filter=label=virtlet_build | grep -q virtlet-build; then
         ensure_build_image
         cd "${project_dir}"
@@ -394,6 +404,7 @@ function gobuild {
 }
 
 function build_image_internal {
+    echo "build_image_internal"
     build_internal
     tar -c _output -C "${project_dir}/images" image_skel/ Dockerfile.virtlet |
         docker build -t "${virtlet_image}" -f Dockerfile.virtlet -
@@ -401,7 +412,10 @@ function build_image_internal {
 
 function install_vendor_internal {
     if [ ! -d vendor ]; then
-        glide install --strip-vendor
+        #glide install --strip-vendor
+        if [[ ! -f go.mod ]]; then
+            go mod init
+        fi
     fi
 }
 

@@ -1,0 +1,73 @@
+module github.com/Mirantis/virtlet
+
+go 1.13
+
+require (
+	cloud.google.com/go v0.1.1-0.20160913182117-3b1ae45394a2
+	github.com/Microsoft/go-winio v0.4.5
+	github.com/aykevl/osfs v0.0.0-20170216152041-e4b1ff739ec9
+	github.com/boltdb/bolt v1.3.2-0.20180302180052-fd01fc79c553
+	github.com/containernetworking/cni v0.5.2
+	github.com/coreos/go-systemd v0.0.0-20160527140244-4484981625c1
+	github.com/davecgh/go-spew v1.1.1
+	github.com/docker/distribution v2.6.0-rc.1.0.20170726174610-edc3ab29cdff+incompatible
+	github.com/docker/docker v1.4.2-0.20170731201938-4f3616fb1c11
+	github.com/docker/engine-api v0.3.2-0.20160509170047-dea108d3aa0c
+	github.com/docker/go-connections v0.3.0
+	github.com/docker/go-units v0.3.2-0.20170127094116-9e638d38cf69
+	github.com/docker/spdystream v0.0.0-20160310174837-449fdfce4d96
+	github.com/emicklei/go-restful v1.1.4-0.20170410110728-ff4f55a20633
+	github.com/ghodss/yaml v0.0.0-20150909031657-73d445a93680
+	github.com/gogo/protobuf v0.0.0-20170330071051-c0656edd0d9e
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
+	github.com/golang/groupcache v0.0.0-20160516000752-02826c3e7903
+	github.com/golang/protobuf v1.3.1
+	github.com/google/gofuzz v0.0.0-20161122191042-44d81051d367
+	github.com/googleapis/gnostic v0.0.0-20170729233727-0c5108395e2d
+	github.com/hashicorp/golang-lru v0.0.0-20160207214719-a0d98a5f2880
+	github.com/howeyc/gopass v0.0.0-20170109162249-bf9dde6d0d2c
+	github.com/imdario/mergo v0.0.0-20141206190957-6633656539c1
+	github.com/inconshreveable/mousetrap v1.0.0
+	github.com/jonboulle/clockwork v0.1.1-0.20160907122059-bcac9884e750
+	github.com/json-iterator/go v0.0.0-20171212105241-13f86432b882
+	github.com/kballard/go-shellquote v0.0.0-20180428030007-95032a82bc51
+	github.com/kr/pty v1.1.1
+	github.com/libvirt/libvirt-go v3.3.1-0.20170508165552-c3209e4ba8b8+incompatible
+	github.com/libvirt/libvirt-go-xml v0.0.0-20171128113925-661c62056664
+	github.com/lithammer/dedent v1.1.0
+	github.com/nu7hatch/gouuid v0.0.0-20131221200532-179d4d0c4d8d
+	github.com/onsi/ginkgo v1.2.1-0.20151202141238-7f8ab55aaf3b
+	github.com/onsi/gomega v1.4.0
+	github.com/opencontainers/go-digest v0.0.0-20170106003457-a6d0ee40d420
+	github.com/pkg/errors v0.8.0
+	github.com/pmezard/go-difflib v1.0.0
+	github.com/russross/blackfriday v2.0.0+incompatible
+	github.com/spf13/cobra v0.0.2
+	github.com/spf13/pflag v1.0.1-0.20171106142849-4c012f6dcd95
+	github.com/vishvananda/netlink v1.0.1-0.20180623192917-028453c77ce5
+	github.com/vishvananda/netns v0.0.0-20160430053723-8ba1072b58e0
+	go.universe.tf/netboot v0.0.0-20190215013330-01f30467ac8e
+	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5
+	golang.org/x/net v0.0.0-20190603091049-60506f45cf65
+	golang.org/x/oauth2 v0.0.0-20170412232759-a6bd8cefa181
+	golang.org/x/sync v0.0.0-20190423024810-112230192c58
+	golang.org/x/sys v0.0.0-20190606165138-5da285871e9c
+	golang.org/x/text v0.3.2
+	golang.org/x/time v0.0.0-20161028155119-f51c12702a4d
+	golang.org/x/tools v0.0.0-20190606124116-d0a3d012864b
+	google.golang.org/appengine v1.6.1
+	google.golang.org/grpc v1.0.4
+	gopkg.in/inf.v0 v0.9.0
+	gopkg.in/square/go-jose.v2 v2.1.3
+	gopkg.in/yaml.v2 v2.0.0
+	k8s.io/api v0.0.0-20180308224125-73d903622b73
+	k8s.io/apiextensions-apiserver v0.0.0-20180426153726-e8ab413e0ae1
+	k8s.io/apimachinery v0.0.0-20180228050457-302974c03f7e
+	k8s.io/apiserver v0.0.0-20180426121757-0841753fc26e
+	k8s.io/client-go v0.0.0-20180424211516-33f2870a2b83
+	k8s.io/code-generator v0.0.0-20180228050103-7ead8f38b01c
+	k8s.io/gengo v0.0.0-20180223161844-01a732e01d00
+	k8s.io/kube-openapi v0.0.0-20180216212618-50ae88d24ede
+	k8s.io/kubernetes v1.10.2
+	k8s.io/utils v0.0.0-20171122000934-aedf551cdb8b
+)
